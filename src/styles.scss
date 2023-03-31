@@ -51,3 +51,14 @@ body{
         margin-left: -12px;
     }
 }
+.forgot_password{
+    .mybtn {
+        border-radius: 0%;
+    }
+    .rs-modal-content{
+        border-radius: 0%;
+    }
+    .rs-modal-body{
+        overflow: unset;
+    }
+}

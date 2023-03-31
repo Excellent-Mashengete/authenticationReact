@@ -6,11 +6,15 @@ import { Mybutton } from '../Components/Button';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { Success, Error } from '../Helpers/toasters';
+import ForgotPassword from '../Components/ForgotPassword';
 import Auth from '../Service/Auth.service'; 
 
 function Login() {
     const formRef = React.useRef();
     const [formValue, setFormValue] = React.useState({email: '', password: ''});
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     const navigate = useNavigate();
 
     const handleSubmit = () => {
@@ -34,6 +38,7 @@ function Login() {
     return (
         <Container className='login'>
             <ToastContainer />
+          
             <Content className='siginForm'>
                 <FlexboxGrid justify="center">
                     <FlexboxGrid.Item as={Col} colspan={22} md={12} lg={10} xl={8}>
@@ -45,9 +50,10 @@ function Login() {
               
                                 <ButtonToolbar style={{marginBottom: "1em"}}>
                                     <Mybutton mybtn={'mybtn'} handle={handleSubmit} label={'Sign in'} appearance={"primary"} />
-                                    <Mybutton mybtn={'forgot'} label={'Forgot password?'} appearance={"link"} />
+                                    <Mybutton mybtn={'forgot'} handle={handleOpen} label={'Forgot password?'} appearance={"link"} />
                                 </ButtonToolbar>
-                  
+
+                                <ForgotPassword handleClose={handleClose} backdrop={'true'} open={open} lable={'Forgot Password'} />
                                 <p >Don't have an account<Mybutton mybtn={'links'} appearance={"link"} handle={()=>navigate('/auth/register')} label={'register!'} /></p>
                             </Form>
                         </Panel>
