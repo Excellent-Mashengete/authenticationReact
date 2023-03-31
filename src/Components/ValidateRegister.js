@@ -7,13 +7,15 @@ export const model = Schema.Model({
 
     lastname: StringType().isRequired('Lastname is required'),
 
+    username: StringType().isRequired('Username is required'),
+
     email: StringType()
       .isEmail('Please enter a valid email address.')
-      .isRequired('This field is required.'),
+      .isRequired('Email is required.'),
 
     phone: StringType().isRequired('Contact Number is required'),
 
-    password: StringType().isRequired('This field is required.'),
+    password: StringType().isRequired('Password is required.'),
     
     verifyPassword: StringType()
       .addRule((value, data) => {
@@ -24,6 +26,6 @@ export const model = Schema.Model({
   
         return true;
       }, 'The two passwords do not match')
-      .isRequired('This field is required.')
+      .isRequired('Confirm Password is required.')
 });
   

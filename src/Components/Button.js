@@ -1,11 +1,11 @@
 import React from 'react'
 import { Button } from 'rsuite'
 
-export const Mybutton = React.forwardRef((props, ref) => {
-    const { handle, label, appearance, ...rest } = props;
-    
+export const Mybutton = ((props) => {
+
+    const { handle, label, appearance, mybtn } = props;
     return (
-        <Button onClick={handle} appearance={appearance} {...rest}>{label}</Button>
+        <Button className={mybtn} onClick={handle} appearance={appearance}>{label}</Button>
     )
 })  
 

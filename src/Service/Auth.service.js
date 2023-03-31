@@ -12,14 +12,22 @@ const login = (data) => {
 }
 
 const register = (data) => {
-    return axios.post(`${process.env.REACT_APP_API}register`, data )
+    return axios.post(`${process.env.REACT_APP_API}register`, data ,  {
+        headers: { 'Content-Type': 'application/json' }
+    })    
 }
 
+const VerifyOTP = (data) => {
+    return axios.post(`${process.env.REACT_APP_API}userotp`, data,  {
+        headers: { 'Content-Type': 'application/json' }
+    })    
+}
 
 const logger = {
     checkUserToken,
     login, 
-    register
+    register,
+    VerifyOTP
 }
 
 export default logger;

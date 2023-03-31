@@ -1,24 +1,11 @@
+
 .navRight{
   margin-right:30px ;
 }
 .rs-dropdown-menu{
   width: 8rem;
 }
-.siginForm {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-.sigupForm {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-}
 .text{
   margin-bottom: 1.8rem;
 }
